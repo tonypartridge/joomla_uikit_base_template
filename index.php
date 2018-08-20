@@ -11,8 +11,9 @@ defined('_JEXEC') or die;
 
 /** @var JDocumentHtml $this */
 
-$app  = JFactory::getApplication();
-$user = JFactory::getUser();
+$app    = JFactory::getApplication();
+$input  = $app->input;
+$user   = JFactory::getUser();
 
 // Output as HTML5
 $this->setHtml5(true);
@@ -21,23 +22,16 @@ $this->setHtml5(true);
 $params = $app->getTemplate(true)->params;
 
 // Detecting Active Variables
-$option   = $app->input->getCmd('option', '');
-$view     = $app->input->getCmd('view', '');
-$layout   = $app->input->getCmd('layout', '');
-$task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
+$option   = $input->getCmd('option', '');
+$view     = $input->getCmd('view', '');
+$layout   = $input->getCmd('layout', '');
+$task     = $input->getCmd('task', '');
+$itemid   = $input->getCmd('Itemid', '');
 $sitename = $app->get('sitename');
 
 //Load in the Style Sheets
 JHtml::_('stylesheet', 'uikit.css', array('version' => 'auto', 'relative' => true));
-
-//Added for if we want offline.css file specific to the offline page.
-//JHtml::_('stylesheet', 'offline.css', array('version' => 'auto', 'relative' => true));
-
-//Load in JavaScript
-JHtml::_('jquery.framework');
-JHtml::_('script', 'uikit.js', array('version' => 'auto', 'relative' => true));
-
+JHtml::_('script', 'uikit.js', array('version' => 'auto', 'relative' => true), ['defer' => true]);
 ?>
 
 <html lang="en-gb" dir="ltr" class="uk-notouch"><head>
@@ -68,7 +62,6 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 	</div>
 
 </div>
-
-
+    <jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>

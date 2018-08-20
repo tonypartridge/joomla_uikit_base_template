@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension version="3.1" type="template" client="site">
-    <name>Simple UIKit</name>
+<extension version="3.1" type="template" client="site" method="upgrade">
+    <name>Simple UIKit3 Template</name>
     <version>1.0</version>
     <creationDate>20/05/2017</creationDate>
     <author>Tony Partridge</author>
     <authorEmail>admin@joomla.org</authorEmail>
     <copyright>Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.</copyright>
-    <description>Basic template using UIKit2. Positions need to be set.</description>
+    <description>Basic template using UiKit3. Positions need to be set.</description>
     <files>
         <filename>component.php</filename>
         <filename>error.php</filename>
@@ -17,16 +17,11 @@
         <filename>templateDetails.xml</filename>
         <filename>template_preview.png</filename>
         <filename>template_thumbnail.png</filename>
-        <filename>bower.json</filename>
         <folder>css</folder>
         <folder>html</folder>
-        <folder>images</folder>
         <folder>img</folder>
         <folder>js</folder>
-        <folder>language</folder>
-        <folder>less</folder>
-        <folder>scss</folder>
-    </files>
+=    </files>
     <positions>
         <position>debug</position>
     </positions>
